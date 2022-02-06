@@ -1,0 +1,15 @@
+.App-Content {
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+  text-align: left;
+}
+.App-Main {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem;
+}
+.App-Results{
+  width: 100%;
+}

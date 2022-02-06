@@ -1,0 +1,19 @@
+.Generations-list{
+  position: absolute;
+  list-style: none;
+  background-color: #fff;
+  border-radius: .25rem;
+  color:rgba(44,56,74,.95);
+  margin: 0;
+  padding: 0;
+  height: auto;
+  overflow-y: auto;
+}
+.Generations-list-item{
+  text-transform:capitalize;
+  font-size: 1.2rem;
+}
+
+.Generations-list-item:hover{
+  background-color:rgb(176, 208, 255);
+}
