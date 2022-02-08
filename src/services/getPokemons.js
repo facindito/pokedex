@@ -7,9 +7,9 @@ const getPokemonData = async (result) => {
       await fetch(pokemon.url)
         .then((response) => response.json())
         .then((result) => {
-          const { name, sprites, types, id } = result
+          const { name, types, id } = result
           // eslint-disable-next-line camelcase
-          const { front_default } = sprites
+          const front_default = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
           const allTypes = types
           // const { name } = type
           pokemonArr.push({ name, front_default, allTypes, id })
@@ -24,7 +24,7 @@ const fromApiResponseToPokemons = async (apiResponse) => {
   return await getPokemonData(apiResponse.results)
 }
 
-export default async function getPokemons ({ limit, offset }) {
+export default async function getPokemons ({ limit, offset } = {}) {
   return await fetch(`${API_URL}pokemon/?offset=${offset}&limit=${limit}`)
     .then((response) => response.json())
     .then(fromApiResponseToPokemons)

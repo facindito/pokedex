@@ -9,24 +9,21 @@ export default function Pokemon ({ name, img, allTypes, id }) {
       style={{ backgroundColor: PokemonTypeColors[allTypes[0].type.name].medium }}
     >
       <div className='Pokemon-content'>
-        <span className='Pokemon-id'>{`#${id}`}</span>
-        <img alt='Pokeball' src='/img/pokeball.svg' className='Pokeball' />
-        <img alt={name} src={img} className='Pokemon-img' />
-      </div>
-      <div
-        className='Pokemon-info'
-        style={{ backgroundColor: PokemonTypeColors[allTypes[0].type.name].light }}
-      >
-        <div className='Pokemon-name'>
-          <h4>{name}</h4>
+        <p className='Pokemon-id'>{`#${id}`}</p>
+        <div className='Pokemon-content-img'>
+          <img alt='Pokeball' src='/img/pokeball.svg' className='Pokeball' />
+          <img alt={name} src={img} className='Pokemon-img' />
         </div>
+      </div>
+      <div className='Pokemon-info'>
+        <h1 className='Pokemon-name'>{name}</h1>
         <div className='Pokemon-types'>
           {
            allTypes.map((p) => {
              return (
                <h4
                  key={p.type.name}
-                 style={{ backgroundColor: PokemonTypeColors[p.type.name].medium }}
+                 style={{ color: PokemonTypeColors[p.type.name].medium }}
                >{p.type.name}
                </h4>
              )

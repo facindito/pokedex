@@ -3,9 +3,13 @@ import { useEffect, useContext, useState } from 'react'
 import getPokemons from '../services/getPokemons'
 import PokemonContext from '../context/pokeContext'
 
-export function usePokemons ({ limit, offset } = { limit: 151, offset: 0 }) {
+const INITIAL_PAGE = 0
+
+export function usePokemons ({ limit, offset }) {
   const { pokemons, setPokemons } = useContext(PokemonContext)
   const [loading, setLoading] = useState(false)
+  const [loadingNextPage, setLoadingNextPage] = useState(false)
+  const [page, setPage] = useState(INITIAL_PAGE)
 
   useEffect(async function () {
     setLoading(true)
@@ -16,5 +20,17 @@ export function usePokemons ({ limit, offset } = { limit: 151, offset: 0 }) {
       })
   }, [setPokemons])
 
-  return { pokemons, loading }
+  useEffect(function () {
+    if (page === INITIAL_PAGE) return
+
+    setLoadingNextPage(true)
+
+    getPokemons({ offset: (page * limit) })
+      .then(nextPokemons => {
+        setPokemons(prevPokemons => prevPokemons.concat(nextPokemons))
+        setLoadingNextPage(false)
+      })
+  }, [page, setPokemons])
+
+  return { pokemons, loading, setPage, loadingNextPage }
 };

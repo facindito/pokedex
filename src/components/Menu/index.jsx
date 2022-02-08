@@ -27,13 +27,13 @@ export default function NavBar () {
       </button>
       <div className={`navbar-collapse collapse ${show ? 'show' : ''}`}>
         <div className='dropdown'>
-          <button className='dropbtn'>TIPOS</button>
+          <button className='dropbtn'>Types</button>
           <div className='dropdown-content'>
             <TypesPokemons />
           </div>
         </div>
         <div className='dropdown'>
-          <button className='dropbtn'>GENERACIONES</button>
+          <button className='dropbtn'>Generations</button>
           <div className='dropdown-content'>
             <Generations />
           </div>

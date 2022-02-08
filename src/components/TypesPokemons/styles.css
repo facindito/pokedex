@@ -6,13 +6,15 @@
   color:rgba(44,56,74,.95);
   margin: 0;
   padding: 0;
-  height: 75vh;
-  overflow-y: scroll;
+  height: 50vh;
+  column-count: 3;
 }
 .Type-list-item{
   text-transform:capitalize;
   font-size: 1.2rem;
+ 
 }
 .Type-list-item:hover{
   background-color:rgb(176, 208, 255);
+  border-radius: .25rem;
 }

@@ -5,34 +5,34 @@ import getPokemons from '../services/getPokemons'
 const PokemonGenerationsEnum = {
   generacion_1: {
     offset: 0,
-    limit: 150
+    limit: 151
   },
   generacion_2: {
     offset: 151,
     limit: 100
   },
   generacion_3: {
-    offset: 386,
+    offset: 251,
     limit: 135
   },
   generacion_4: {
-    offset: 494,
+    offset: 386,
     limit: 107
   },
   generacion_5: {
-    offset: 649,
+    offset: 493,
     limit: 156
   },
   generacion_6: {
-    offset: 721,
+    offset: 649,
     limit: 72
   },
   generacion_7: {
-    offset: 809,
+    offset: 721,
     limit: 88
   },
   generacion_8: {
-    offset: 898,
+    offset: 809,
     limit: 89
   }
 }

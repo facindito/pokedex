@@ -1,79 +1,78 @@
 .Pokemon {
   width: 100%;
-  max-width: 29.5rem;
-  min-width: 20rem;
-  padding: 15px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
   border-radius: 10px;
-  height: 10rem;
   position: relative;
-  box-shadow: 2px 2px 2px #000 ;
   cursor: pointer;
-}
-
-.Pokemon h4 {
-  font-size: 1.2rem;
-  color: #000;
-}
-.Pokemon-img{
-  position: relative;
-  height: 100%;
-  margin: 1rem;
-  z-index: 3;
+  width: 20rem;
+  box-shadow: 2px 2px 2px #777 ;
 }
 .Pokemon:hover{
   box-shadow: none;
   left: 2px;
   top: 2px;
 }
-.Pokemon-id{ 
-  position: absolute;
-  font-size: 3rem;
-  opacity: 0.2;
-  z-index: 2;
-}
-.Pokemon-content{
-  height: 100%;
+.Pokemon-content {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Pokemon-id {
+  
+  font-weight: 600;
+  font-size: 4rem;
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  cursor: pointer;
+  margin: 0;
+  top: 0;
+  letter-spacing: 0.3em;
+  color: rgba(0, 0, 0, 0.25);
+  
+}
+.Pokemon-content-img {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  bottom: 0;
+  right: auto;
+  left: auto;
+}
+.Pokemon-content-img img{
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+}
+.Pokeball{
+  opacity: 0.25;
 }
 .Pokemon-info{
   background: #fff;
-  margin-right: 1rem;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
+  text-align: center;
+  border-radius: 0 0 10px 10px;
+
 }
 .Pokemon-name{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 2rem;
+  color: #000;
   text-transform: capitalize;
-}
-.Pokemon-name h4{
-  font-size: 1.5rem;
-  margin: 1rem 0;
-}
-.Pokeball{
-  position: absolute;
-  height: 100%;
-  opacity: 0.3;
-  padding: 1rem;
-  z-index: 1;
+  padding-top: 2rem;
+  margin-bottom: 0.25rem;
 }
 .Pokemon-types{
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: center;
 }
-.Pokemon-types>h4{
-  border: 2px solid black;
-  border-radius: 10px ;
-  padding: 3px 10px;
-  margin: 1rem 0;
-  font-size: 13px;
+.Pokemon-types h4{
+  text-transform: uppercase;
+  margin-right: 1rem;
+  font-weight: 600;
 }
-/****/
+

@@ -13,11 +13,6 @@ export default function TypesPokemons () {
   return (
     <>
       <ul className='Type-list'>
-        <li className='Type-list-item '>
-          <Link className='Type-link' to='/'>
-            all
-          </Link>
-        </li>
         {types.map((type) => (
           <li key={type.name} className={'Type-list-item ' + type.name}>
             <Link className='Type-link' to={`/type/${type.name}`}>

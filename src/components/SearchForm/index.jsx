@@ -13,12 +13,11 @@ function SearchForm ({ onSubmit }) {
   const handleChange = evt => {
     setKeyword(evt.target.value)
   }
-
   return (
     <form onSubmit={handleSubmit} className='search-form'>
       <input type='text' className='Search' onChange={handleChange} value={keyword} />
       <button type='submit' className='btn'>
-        Buscar
+        Search
       </button>
     </form>
   )
