@@ -14,7 +14,6 @@ export default function NavBar () {
     // Navegar a otra ruta
     pushLocation(`/search/${keyword}`)
   }, [pushLocation])
-
   return (
     <nav className='navbar'>
       <Link to='/'>
@@ -26,12 +25,6 @@ export default function NavBar () {
         <i className='fa fa-bars navbar-toggler-icon' aria-hidden='true' />
       </button>
       <div className={`navbar-collapse collapse ${show ? 'show' : ''}`}>
-        <div className='dropdown'>
-          <button className='dropbtn'>Types</button>
-          <div className='dropdown-content'>
-            <TypesPokemons />
-          </div>
-        </div>
         <div className='dropdown'>
           <button className='dropbtn'>Generations</button>
           <div className='dropdown-content'>

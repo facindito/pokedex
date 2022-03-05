@@ -1,20 +1,19 @@
 /* eslint-disable camelcase */
-import { React } from 'react'
+import React from 'react'
 
 import Pokemon from '../Pokemon'
 import './style.css'
 
-export default function ListOfPokemons ({ pokemons }) {
+function ListOfPokemons ({ pokemons }) {
   return (
     <div className='Pokemons'>
       {
         pokemons
-          .sort((a, b) => a.id - b.id)
-          .map(({ name, front_default, allTypes, id }) =>
+          .map(({ name, img, allTypes, id }) =>
             <Pokemon
               name={name}
               key={id}
-              img={front_default}
+              img={img}
               allTypes={allTypes}
               id={id}
             />
@@ -23,3 +22,5 @@ export default function ListOfPokemons ({ pokemons }) {
     </div>
   )
 }
+
+export default React.memo(ListOfPokemons)

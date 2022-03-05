@@ -9,15 +9,14 @@ const getPokemonData = async (result) => {
         .then((result) => {
           const { name, types, id } = result
           // eslint-disable-next-line camelcase
-          const front_default = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
+          const img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
           const allTypes = types
           // const { name } = type
-          pokemonArr.push({ name, front_default, allTypes, id })
+          pokemonArr.push({ name, img, allTypes, id })
         })
     })
   )
-
-  return pokemonArr
+  return pokemonArr.sort((a, b) => a.id - b.id)
 }
 
 const fromApiResponseToPokemons = async (apiResponse) => {

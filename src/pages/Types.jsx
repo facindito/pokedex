@@ -1,4 +1,5 @@
 import ListOfPokemons from '../components/ListOfPokemons'
+import TypesPokemons from '../components/TypesPokemons'
 import { useTypePokemons } from '../hooks/useTypePokemons'
 
 export default function Types ({ params }) {
@@ -7,6 +8,7 @@ export default function Types ({ params }) {
   return (
     <>
       <div className='App-Results'>
+        <TypesPokemons />
         <ListOfPokemons pokemons={typesFilter} />
       </div>
     </>

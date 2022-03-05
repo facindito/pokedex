@@ -3,25 +3,37 @@ import { useContext, useEffect, useState } from 'react'
 import PokemonContext from '../context/pokeContext'
 
 export function useTypePokemons ({ type }) {
-  const { pokemons } = useContext(PokemonContext)
+  const { pokemons, pokemonsFilter, typeSelect } = useContext(PokemonContext)
   const [typesFilter, setTypeFilter] = useState([])
 
   const filter = () => {
-    const filterPokemons = []
-    pokemons.forEach((pokemon) => {
-      pokemon.allTypes.forEach((t) => {
-        if (t.type.name === type) {
-        // eslint-disable-next-line camelcase
-          const { name, front_default, allTypes, id } = pokemon
-          filterPokemons.push({ name, front_default, allTypes, id })
-        }
+    const filter = []
+    if (pokemonsFilter.length === 0) {
+      pokemons.forEach((pokemon) => {
+        pokemon.allTypes.forEach((t) => {
+          if (t.type.name === type) {
+            // eslint-disable-next-line camelcase
+            const { name, img, allTypes, id } = pokemon
+            filter.push({ name, img, allTypes, id })
+          }
+        })
       })
-    })
-    return filterPokemons
+    } else {
+      pokemonsFilter.forEach((pokemon) => {
+        pokemon.allTypes.forEach((t) => {
+          if (t.type.name === type) {
+            // eslint-disable-next-line camelcase
+            const { name, img, allTypes, id } = pokemon
+            filter.push({ name, img, allTypes, id })
+          }
+        })
+      })
+    }
+    return filter
   }
   useEffect(function () {
     setTypeFilter(filter())
-  }, [type, setTypeFilter])
+  }, [type, setTypeFilter, typeSelect])
 
   return { typesFilter }
 };

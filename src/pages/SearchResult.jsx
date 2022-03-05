@@ -1,30 +1,17 @@
-import React, { useEffect } from 'react'
-
-import Spinner from '../components/Spinner'
-import Pokemon from '../components/Pokemon'
+import React from 'react'
+import ListOfPokemons from '../components/ListOfPokemons'
 import { useSinglePokemon } from '../hooks/useSinglePokemon'
 
 export default function SearchResults ({ params }) {
   const { keyword } = params
-  const { pokemon, loading } = useSinglePokemon({ keyword })
+  const { pokemonsFilter } = useSinglePokemon({ keyword })
 
-  const { name, front_default, allTypes, id } = pokemon
-  if (!pokemon) { return (<h1>Pokemon no encontrado!</h1>) }
+  if (!pokemonsFilter) { return (<h1>Pokemon no encontrado!</h1>) }
   return (
     <>
-      {
-        loading
-          ? <Spinner />
-          : <>
-            <Pokemon
-              name={name}
-              key={id}
-              img={front_default}
-              allTypes={allTypes}
-              id={id}
-            />
-          </>
-      }
+      <div className='App-Results'>
+        <ListOfPokemons pokemons={pokemonsFilter} />
+      </div>
     </>
   )
 }

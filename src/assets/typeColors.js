@@ -70,5 +70,13 @@ export const PokemonTypeColors = {
   fairy: {
     light: '#EFA7B7',
     medium: '#EE99AC'
+  },
+  unknown: {
+    light: '#333333',
+    medium: '#000000'
+  },
+  shadow: {
+    light: '#333333',
+    medium: '#000000'
   }
 }

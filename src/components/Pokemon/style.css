@@ -3,10 +3,9 @@
   border-radius: 10px;
   position: relative;
   cursor: pointer;
-  width: 20rem;
-  box-shadow: 2px 2px 2px #777 ;
+  box-shadow: 2px 2px 2px #777;
 }
-.Pokemon:hover{
+.Pokemon:hover {
   box-shadow: none;
   left: 2px;
   top: 2px;
@@ -24,7 +23,6 @@
 }
 
 .Pokemon-id {
-  
   font-weight: 600;
   font-size: 4rem;
   pointer-events: none;
@@ -35,7 +33,6 @@
   top: 0;
   letter-spacing: 0.3em;
   color: rgba(0, 0, 0, 0.25);
-  
 }
 .Pokemon-content-img {
   position: absolute;
@@ -45,34 +42,40 @@
   right: auto;
   left: auto;
 }
-.Pokemon-content-img img{
+.Pokemon-content-img img {
   max-width: 100%;
   height: auto;
   position: absolute;
 }
-.Pokeball{
+.Pokeball {
   opacity: 0.25;
 }
-.Pokemon-info{
+.Pokemon-info {
   background: #fff;
   text-align: center;
   border-radius: 0 0 10px 10px;
-
 }
-.Pokemon-name{
+.Pokemon-name {
   font-size: 2rem;
   color: #000;
   text-transform: capitalize;
   padding-top: 2rem;
   margin-bottom: 0.25rem;
 }
-.Pokemon-types{
+.Pokemon-types {
   display: flex;
   justify-content: center;
 }
-.Pokemon-types h4{
+.Pokemon-types h4 {
   text-transform: uppercase;
   margin-right: 1rem;
   font-weight: 600;
 }
 
+.Pokemon-link {
+  color: #000;
+  display: block;
+  text-decoration: none;
+  position: relative;
+  width: 100%;
+}

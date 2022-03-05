@@ -8,6 +8,7 @@ function SearchForm ({ onSubmit }) {
     evt.preventDefault()
     // navegar a otra ruta
     onSubmit({ keyword })
+    setKeyword('')
   }
 
   const handleChange = evt => {

@@ -1,20 +1,55 @@
-.Type-list{
-  position: absolute;
-  list-style: none;
+.Type {
+  margin-bottom: 2rem;
+  width: auto;
+  padding: 1rem;
   background-color: #fff;
-  border-radius: .25rem;
-  color:rgba(44,56,74,.95);
-  margin: 0;
+  border-radius: 10px;
+}
+.Type-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(2rem, 1fr));
+  gap: 25px;
   padding: 0;
-  height: 50vh;
-  column-count: 3;
 }
-.Type-list-item{
-  text-transform:capitalize;
+.Type-list-item {
+  text-transform: capitalize;
   font-size: 1.2rem;
- 
+  text-align: center;
 }
-.Type-list-item:hover{
-  background-color:rgb(176, 208, 255);
-  border-radius: .25rem;
+.Type-list-item a {
+  text-decoration: none;
+}
+.Type-name {
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+.Type-btn {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+@media screen and (min-width: 768px) {
+  .Type-list {
+    grid-template-columns: repeat(5, minmax(2rem, 1fr));
+  }
+  .Type-name {
+    font-size: inherit;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .Type-list {
+    grid-template-columns: repeat(8, minmax(2rem, 1fr));
+  }
+  .Type-name {
+    font-size: inherit;
+  }
 }

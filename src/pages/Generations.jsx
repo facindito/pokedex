@@ -1,21 +1,29 @@
+import { useContext } from 'react'
 import ListOfPokemons from '../components/ListOfPokemons'
+import TypesPokemons from '../components/TypesPokemons'
+import PokemonContext from '../context/pokeContext'
 import { useGenerations } from '../hooks/useGenerations'
-import Spinner from '../components/Spinner'
+import { useTypePokemons } from '../hooks/useTypePokemons'
 
 export default function Generations ({ params }) {
-  const { generation } = params
-  const { pokemons, loading } = useGenerations({ generation })
+  const { id } = params
+  const { pokemonsFilter } = useGenerations({ id })
+  const { typeSelect } = useContext(PokemonContext)
+  const { typesFilter } = useTypePokemons({ type: typeSelect })
+
+  console.log(typesFilter)
   return (
     <>
-      {
-        loading
-          ? <Spinner />
-          : <>
-            <div className='App-Results'>
-              <ListOfPokemons pokemons={pokemons} />
-            </div>
-          </>
-      }
+      <div className='App-Results'>
+        <div>
+          <TypesPokemons />
+          {
+            (typesFilter.length !== 0)
+              ? <ListOfPokemons pokemons={typesFilter} />
+              : <ListOfPokemons pokemons={pokemonsFilter} />
+          }
+        </div>
+      </div>
     </>
   )
 };
