@@ -1,6 +1,5 @@
 import { useState, useCallback } from 'react'
 import { Link, useLocation } from 'wouter'
-import TypesPokemons from '../TypesPokemons'
 import SearchForm from '../SearchForm'
 
 import './styles.css'
@@ -14,6 +13,10 @@ export default function NavBar () {
     // Navegar a otra ruta
     pushLocation(`/search/${keyword}`)
   }, [pushLocation])
+
+  const handleClick = () => {
+    setShow(!show)
+  }
   return (
     <nav className='navbar'>
       <Link to='/'>
@@ -21,10 +24,10 @@ export default function NavBar () {
           <img src='/img/International_Pokémon_logo.svg' alt='' />
         </div>
       </Link>
-      <button type='button' className='navbar-toggler' onClick={() => setShow(!show)}>
+      <button type='button' className='navbar-toggler' onClick={handleClick}>
         <i className='fa fa-bars navbar-toggler-icon' aria-hidden='true' />
       </button>
-      <div className={`navbar-collapse collapse ${show ? 'show' : ''}`}>
+      <div className={`navbar-collapse collapse ${show && 'show'}`}>
         <div className='dropdown'>
           <button className='dropbtn'>Generations</button>
           <div className='dropdown-content'>

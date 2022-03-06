@@ -19,6 +19,7 @@ export default function useNearScreen ({ distance = '10px', externalRef, once = 
         !once && setShow(false)
       }
     }
+
     Promise.resolve(
       typeof IntersectionObserver !== 'undefined'
         // eslint-disable-next-line no-undef
@@ -29,7 +30,6 @@ export default function useNearScreen ({ distance = '10px', externalRef, once = 
       observer = new IntersectionObserver(onChange, {
         rootMargin: distance
       })
-
       observer.observe(fromElement)
     })
 

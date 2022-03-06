@@ -1,6 +1,4 @@
-/* eslint-disable camelcase */
 import React from 'react'
-
 import Pokemon from '../Pokemon'
 import './style.css'
 

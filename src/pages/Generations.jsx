@@ -11,7 +11,6 @@ export default function Generations ({ params }) {
   const { typeSelect } = useContext(PokemonContext)
   const { typesFilter } = useTypePokemons({ type: typeSelect })
 
-  console.log(typesFilter)
   return (
     <>
       <div className='App-Results'>
