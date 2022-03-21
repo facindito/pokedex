@@ -21,7 +21,7 @@ export default function NavBar () {
     <nav className='navbar'>
       <Link to='/'>
         <div className='logo'>
-          <img src='/img/International_Pokémon_logo.svg' alt='' />
+          <img src='/img/Logo.svg' alt='' />
         </div>
       </Link>
       <button type='button' className='navbar-toggler' onClick={handleClick}>

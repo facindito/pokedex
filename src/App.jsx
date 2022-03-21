@@ -2,10 +2,9 @@ import React from 'react'
 import { Route } from 'wouter'
 import './App.css'
 import { PokemonContextProvider } from './context/pokeContext'
-import NavBar from './components/Navbar'
+import NavBar from './components/NavBar'
 
 import Home from './pages/Home'
-import Types from './pages/Types'
 import SearchResults from './pages/SearchResult'
 import Detail from './pages/Detail'
 import Generations from './pages/Generations'
@@ -32,10 +31,6 @@ function App () {
             <Route
               component={Generations}
               path='/generation/:id'
-            />
-            <Route
-              component={Types}
-              path='/type/:type'
             />
             <Route path='/:error'>
               <center>
