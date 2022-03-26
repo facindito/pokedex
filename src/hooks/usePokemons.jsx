@@ -12,10 +12,10 @@ export function usePokemons ({ limit, offset }) {
   const [offSet, setOffset] = useState(INITIAL_PAGE)
   const [pokemonPage, setPokemonPage] = useState([])
 
-  useEffect(async function () {
+  useEffect(function () {
     if (pokemons.length > 0) return
     setLoading(true)
-    await getPokemons({ limit: 898 })
+    getPokemons({ limit: 898 })
       .then(pokemons => {
         setPokemons(pokemons)
         setLoading(false)

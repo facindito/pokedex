@@ -6,8 +6,9 @@ import './style.css'
 export default function Generations () {
   const [generations, setGenerations] = useState([])
 
-  useEffect(async () => {
-    await getGenerations().then(setGenerations)
+  useEffect(function () {
+    getGenerations()
+      .then(setGenerations)
   }, [])
   return (
     <>

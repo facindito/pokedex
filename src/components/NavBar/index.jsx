@@ -10,13 +10,13 @@ export default function NavBar () {
   const [, pushLocation] = useLocation()
 
   const handlerSubmit = useCallback(({ keyword }) => {
-    // Navegar a otra ruta
     pushLocation(`/search/${keyword}`)
   }, [pushLocation])
 
   const handleClick = () => {
     setShow(!show)
   }
+
   return (
     <nav className='navbar'>
       <Link to='/'>
@@ -39,7 +39,3 @@ export default function NavBar () {
     </nav>
   )
 }
-/**
-onMouseEnter={() => setOpen(true)}
-onMouseLeave={() => setOpen(false)}
-**/

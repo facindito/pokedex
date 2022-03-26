@@ -14,7 +14,7 @@ function Pokemon ({ name, img, allTypes, id }) {
           <p className='Pokemon-id'>{`#${id}`}</p>
           <div className='Pokemon-content-img'>
             <img alt='Pokeball' src='/img/pokeball.svg' className='Pokeball' />
-            <img alt={name} src={img} className='Pokemon-img' />
+            <img loading='lazy' alt={name} src={img} className='Pokemon-img' />
           </div>
         </div>
         <div className='Pokemon-info'>

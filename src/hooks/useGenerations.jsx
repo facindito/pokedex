@@ -8,7 +8,7 @@ export function useGenerations ({ id }) {
   const offSet = PokemonGenerationsEnum[id].offset
   const limit = PokemonGenerationsEnum[id].limit + offSet
 
-  useEffect(async function () {
+  useEffect(function () {
     setPokemonsFilter(pokemons.slice(offSet, limit))
     setTypeSelect([])
   }, [id])

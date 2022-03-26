@@ -85,21 +85,23 @@ export default function PokemonDetailCard ({ id, name, img, allTypes, height, we
       {
         (evolutions.length === 0)
           ? <></>
-          : <div className='pokemon-evolutions'>
-            <h1>Evolutions</h1>
-            <ul>
-              {evolutions.map(evo => {
-                return (
-                  <Link className='Pokemon-link' to={`/pokemon/${evo.id}`} key={evo.id}>
-                    <li>
-                      <span className='title'>{evo.name}</span>
-                      <img className='Pokemon-img' src={evo.img} alt={evo.name} />
-                    </li>
-                  </Link>
-                )
-              })}
-            </ul>
-          </div>
+          : (
+            <div className='pokemon-evolutions'>
+              <h1>Evolutions</h1>
+              <ul>
+                {evolutions.map(evo => {
+                  return (
+                    <Link className='Pokemon-link' to={`/pokemon/${evo.id}`} key={evo.id}>
+                      <li>
+                        <span className='title'>{evo.name}</span>
+                        <img className='Pokemon-img' src={evo.img} alt={evo.name} />
+                      </li>
+                    </Link>
+                  )
+                })}
+              </ul>
+            </div>
+            )
       }
     </div>
   )

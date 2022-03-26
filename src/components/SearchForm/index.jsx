@@ -4,9 +4,7 @@ function SearchForm ({ onSubmit }) {
   const [keyword, setKeyword] = useState('')
 
   const handleSubmit = evt => {
-    // No olvidar
     evt.preventDefault()
-    // navegar a otra ruta
     onSubmit({ keyword })
     setKeyword('')
   }

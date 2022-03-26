@@ -10,8 +10,8 @@ export default function TypesPokemons () {
   const [active, setActive] = useState(false)
   const { typeSelect, setTypeSelect } = useContext(PokemonContext)
 
-  useEffect(async () => {
-    await getTypes().then(setTypes)
+  useEffect(function () {
+    getTypes().then(setTypes)
   }, [])
 
   const handleClick = (e) => {

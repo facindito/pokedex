@@ -5,7 +5,7 @@ export default function usePokemonInfo ({ id }) {
   const [pokemon, setPokemon] = useState('')
   const [loading, setLoading] = useState(false)
 
-  useEffect(async function () {
+  useEffect(function () {
     setLoading(true)
     getPokemonInfo({ id })
       .then(pokemon => {

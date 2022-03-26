@@ -8,7 +8,7 @@ const fromApiResponseTo = (apiResponse) => {
   return { id, name, img, allTypes }
 }
 export default async function getPokemon ({ keyword }) {
-  return await fetch(`${API_URL}pokemon/${keyword}`)
-    .then(resp => resp.json())
-    .then(fromApiResponseTo)
+  const resp = await fetch(`${API_URL}pokemon/${keyword}`)
+  const apiResponse = await resp.json()
+  return fromApiResponseTo(apiResponse)
 };

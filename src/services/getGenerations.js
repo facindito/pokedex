@@ -6,7 +6,7 @@ const fromApiResponseToTypes = apiResponse => {
 }
 
 export default async function getGenerations () {
-  return await fetch(`${API_URL}generation`)
-    .then(resp => resp.json())
-    .then(fromApiResponseToTypes)
+  const resp = await fetch(`${API_URL}generation`)
+  const apiResponse = await resp.json()
+  return fromApiResponseToTypes(apiResponse)
 };

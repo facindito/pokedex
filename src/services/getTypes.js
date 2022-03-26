@@ -6,7 +6,7 @@ const fromApiResponseToTypes = apiResponse => {
 }
 
 export default async function getTypes () {
-  return await fetch(`${API_URL}type`)
-    .then(resp => resp.json())
-    .then(fromApiResponseToTypes)
+  const resp = await fetch(`${API_URL}type`)
+  const apiResponse = await resp.json()
+  return fromApiResponseToTypes(apiResponse)
 };

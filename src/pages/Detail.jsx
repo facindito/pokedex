@@ -6,7 +6,19 @@ export default function Detail ({ params }) {
   const { id } = params
   const { pokemon, loading } = usePokemonInfo({ id })
 
-  const { name, img, allTypes, height, weight, stats, species, evolutions, flavorText, abilities } = pokemon
+  const {
+    abilities,
+    allTypes,
+    evolutions,
+    flavorText,
+    height,
+    img,
+    name,
+    species,
+    stats,
+    weight
+  } = pokemon
+
   if (!pokemon) { return (<Spinner />) }
   return (
     <>
@@ -14,18 +26,18 @@ export default function Detail ({ params }) {
         loading
           ? <Spinner />
           : <PokemonDetailCard
-              name={name}
-              key={id}
-              img={img}
+              abilities={abilities}
               allTypes={allTypes}
-              id={id}
-              height={height}
-              weight={weight}
-              stats={stats}
-              species={species}
               evolutions={evolutions}
               flavorText={flavorText}
-              abilities={abilities}
+              height={height}
+              id={id}
+              img={img}
+              key={id}
+              name={name}
+              species={species}
+              stats={stats}
+              weight={weight}
             />
       }
     </>

@@ -1,13 +1,12 @@
 import React from 'react'
-import { Route } from 'wouter'
 import './App.css'
 import { PokemonContextProvider } from './context/pokeContext'
-import NavBar from './components/NavBar'
-
-import Home from './pages/Home'
-import SearchResults from './pages/SearchResult'
+import { Route } from 'wouter'
 import Detail from './pages/Detail'
 import Generations from './pages/Generations'
+import Home from './pages/Home'
+import NavBar from './components/NavBar'
+import SearchResults from './pages/SearchResult'
 
 function App () {
   return (
@@ -33,9 +32,7 @@ function App () {
               path='/generation/:id'
             />
             <Route path='/:error'>
-              <center>
-                <b>404:</b> Sorry, this page isn't ready yet!
-              </center>
+              <b>404:</b> Sorry, this page isn't ready yet!
             </Route>
           </div>
         </PokemonContextProvider>
