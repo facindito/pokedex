@@ -6,6 +6,7 @@ const fromApiResponseTo = (apiResponse) => {
   const img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
   return { id, name, img, types }
 }
+
 export default async function getPokemon ({ keyword }) {
   const resp = await fetch(`${API_URL}pokemon/${keyword}`)
   const apiResponse = await resp.json()
