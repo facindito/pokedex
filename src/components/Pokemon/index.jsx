@@ -3,11 +3,13 @@ import { Link } from 'wouter'
 import { PokemonTypeColors } from '../../assets/typeColors'
 import './style.css'
 
-function Pokemon ({ name, img, allTypes, id }) {
+function Pokemon ({ name, img, types, id }) {
   return (
     <div
       className='Pokemon'
-      style={{ backgroundColor: PokemonTypeColors[allTypes[0].type.name].medium }}
+      style={{
+        backgroundColor: PokemonTypeColors[types[0].type.name].medium
+      }}
     >
       <Link className='Pokemon-link' to={`/pokemon/${id}`}>
         <div className='Pokemon-content'>
@@ -20,17 +22,16 @@ function Pokemon ({ name, img, allTypes, id }) {
         <div className='Pokemon-info'>
           <h1 className='Pokemon-name'>{name}</h1>
           <div className='Pokemon-types'>
-            {
-           allTypes.map((p) => {
-             return (
-               <h4
-                 key={p.type.name}
-                 style={{ color: PokemonTypeColors[p.type.name].medium }}
-               >{p.type.name}
-               </h4>
-             )
-           })
-          }
+            {types.map((p) => {
+              return (
+                <h4
+                  key={p.type.name}
+                  style={{ color: PokemonTypeColors[p.type.name].medium }}
+                >
+                  {p.type.name}
+                </h4>
+              )
+            })}
           </div>
         </div>
       </Link>

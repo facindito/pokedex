@@ -3,13 +3,13 @@ import { PokemonTypeColors } from '../../assets/typeColors'
 import { Link } from 'wouter'
 import './style.css'
 
-export default function PokemonDetailCard ({ id, name, img, allTypes, height, weight, stats, evolutions, flavorText, abilities }) {
+export default function PokemonDetailCard ({ id, name, img, types, height, weight, stats, evolutions, flavorText, abilities }) {
   return (
     <div className='container'>
       <div className='Pokemon-container'>
         <div
           className='Pokemon-detail'
-          style={{ backgroundColor: PokemonTypeColors[allTypes[0].type.name].medium }}
+          style={{ backgroundColor: PokemonTypeColors[types[0].type.name].medium }}
         >
           <div className='Pokemon-detail-content'>
             <p className='Pokemon-detail-id'>{`#${id}`}</p>
@@ -22,7 +22,7 @@ export default function PokemonDetailCard ({ id, name, img, allTypes, height, we
             <h1 className='Pokemon-detail-name'>{name}</h1>
             <div className='Pokemon-detail-types'>
               {
-           allTypes.map((p) => {
+           types.map((p) => {
              return (
                <h4
                  key={p.type.name}

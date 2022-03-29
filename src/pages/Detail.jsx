@@ -8,7 +8,7 @@ export default function Detail ({ params }) {
 
   const {
     abilities,
-    allTypes,
+    types,
     evolutions,
     flavorText,
     height,
@@ -27,7 +27,7 @@ export default function Detail ({ params }) {
           ? <Spinner />
           : <PokemonDetailCard
               abilities={abilities}
-              allTypes={allTypes}
+              types={types}
               evolutions={evolutions}
               flavorText={flavorText}
               height={height}

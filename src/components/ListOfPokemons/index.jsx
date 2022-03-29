@@ -7,12 +7,12 @@ function ListOfPokemons ({ pokemons }) {
     <div className='Pokemons'>
       {
         pokemons
-          .map(({ name, img, allTypes, id }) =>
+          .map(({ name, img, types, id }) =>
             <Pokemon
               name={name}
               key={id}
               img={img}
-              allTypes={allTypes}
+              types={types}
               id={id}
             />
           )

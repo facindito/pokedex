@@ -16,8 +16,7 @@ const getPokemonData = async (apiResponse) => {
   const { evolutions, flavorText } = await getPokemonSpecies(species)
   // eslint-disable-next-line camelcase
   const img = `${IMG_URL + id}.png`
-  const allTypes = types
-  return { id, name, img, allTypes, height, weight, stats, species, evolutions, flavorText, abilities }
+  return { id, name, img, types, height, weight, stats, species, evolutions, flavorText, abilities }
 }
 
 const getPokemonSpecies = async (species) => {

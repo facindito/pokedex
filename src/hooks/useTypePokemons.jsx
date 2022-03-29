@@ -10,21 +10,21 @@ export function useTypePokemons ({ type }) {
     const filter = []
     if (pokemonsFilter.length === 0) {
       pokemons.forEach((pokemon) => {
-        pokemon.allTypes.forEach((t) => {
+        pokemon.types.forEach((t) => {
           if (t.type.name === type) {
             // eslint-disable-next-line camelcase
-            const { name, img, allTypes, id } = pokemon
-            filter.push({ name, img, allTypes, id })
+            const { name, img, types, id } = pokemon
+            filter.push({ name, img, types, id })
           }
         })
       })
     } else {
       pokemonsFilter.forEach((pokemon) => {
-        pokemon.allTypes.forEach((t) => {
+        pokemon.types.forEach((t) => {
           if (t.type.name === type) {
             // eslint-disable-next-line camelcase
-            const { name, img, allTypes, id } = pokemon
-            filter.push({ name, img, allTypes, id })
+            const { name, img, types, id } = pokemon
+            filter.push({ name, img, types, id })
           }
         })
       })

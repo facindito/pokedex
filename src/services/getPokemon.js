@@ -4,8 +4,7 @@ const fromApiResponseTo = (apiResponse) => {
   const { name, id, types } = apiResponse
   // eslint-disable-next-line camelcase
   const img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
-  const allTypes = types
-  return { id, name, img, allTypes }
+  return { id, name, img, types }
 }
 export default async function getPokemon ({ keyword }) {
   const resp = await fetch(`${API_URL}pokemon/${keyword}`)
