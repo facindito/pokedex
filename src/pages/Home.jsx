@@ -21,7 +21,6 @@ export default function Home () {
     }), [])
 
   useEffect(function () {
-    setPokemonsFilter([])
     if (isNearScreen) debounceHandleNextPage()
   }, [debounceHandleNextPage, isNearScreen, setPokemonsFilter])
   return (
