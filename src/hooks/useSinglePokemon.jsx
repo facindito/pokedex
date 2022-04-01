@@ -11,7 +11,7 @@ export function useSinglePokemon ({ keyword }) {
         setPokemonsFilter(pokemon)
       })
     localStorage.setItem('lastKeyword', keywordToUse)
-  }, [keyword, keywordToUse, setPokemonsFilter, pokemonsFilter])
+  }, [keyword, keywordToUse, setPokemonsFilter])
 
   return { pokemonsFilter }
 };
