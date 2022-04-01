@@ -7,6 +7,7 @@ export function useSinglePokemon ({ keyword }) {
   const [loading, setLoading] = useState(false)
 
   const keywordToUse = keyword.toLowerCase() || localStorage.getItem('lastKeyword')
+
   useEffect(function () {
     setLoading(true)
     getPokemon({ keyword: keywordToUse })
