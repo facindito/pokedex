@@ -6,7 +6,6 @@ function SearchForm ({ onSubmit }) {
   const handleSubmit = evt => {
     evt.preventDefault()
     onSubmit({ keyword })
-    setKeyword('')
   }
 
   const handleChange = evt => {
