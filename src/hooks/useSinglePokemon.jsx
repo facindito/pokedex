@@ -13,8 +13,8 @@ export function useSinglePokemon ({ keyword }) {
       .then(pokemon => {
         setPokemonsFilter(pokemon)
         setLoading(false)
+        localStorage.setItem('lastKeyword', keywordToUse)
       })
-    localStorage.setItem('lastKeyword', keywordToUse)
   }, [keyword, keywordToUse, setPokemonsFilter])
 
   return { pokemonsFilter, loading }
