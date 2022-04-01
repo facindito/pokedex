@@ -1,13 +1,15 @@
 import { useContext, useEffect } from 'react'
+import getPokemon from '../services/getPokemon'
 import PokemonContext from '../context/pokeContext'
 
 export function useSinglePokemon ({ keyword }) {
-  const { pokemonsFilter, setPokemonsFilter, pokemons } = useContext(PokemonContext)
-  // Recuperamos la keyword del localstorage
+  const { pokemonsFilter, setPokemonsFilter } = useContext(PokemonContext)
   const keywordToUse = keyword.toLowerCase() || localStorage.getItem('lastKeyword')
   useEffect(function () {
-    setPokemonsFilter(pokemons.filter(p => p.name.match(keyword)))
-    // guardamos La keyword en el localstorage
+    getPokemon({ keyword: keywordToUse })
+      .then(pokemon => {
+        setPokemonsFilter(pokemon)
+      })
     localStorage.setItem('lastKeyword', keywordToUse)
   }, [keyword, keywordToUse, setPokemonsFilter])
 

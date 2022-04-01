@@ -4,9 +4,10 @@ import { useSinglePokemon } from '../hooks/useSinglePokemon'
 
 export default function SearchResults ({ params }) {
   const { keyword } = params
+
   const { pokemonsFilter } = useSinglePokemon({ keyword })
 
-  if (!pokemonsFilter) { return (<h1>Pokemon no encontrado!</h1>) }
+  if (pokemonsFilter.length === 0) { return (<h1>Pokémon not found!</h1>) }
   return (
     <>
       <div className='App-Results'>

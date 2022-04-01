@@ -1,5 +1,4 @@
 import { API_URL, IMG_URL } from './settings'
-import getPokemon from './getPokemon'
 
 export default async function getPokemonInfo ({ id }) {
   const resp = await fetch(`${API_URL}pokemon/${id}`)
@@ -14,7 +13,6 @@ const fromApiResponseTo = async (apiResponse) => {
 const getPokemonData = async (apiResponse) => {
   const { name, id, types, height, weight, stats, species, abilities } = apiResponse
   const { evolutions, flavorText } = await getPokemonSpecies(species)
-  // eslint-disable-next-line camelcase
   const img = `${IMG_URL + id}.png`
   return { id, name, img, types, height, weight, stats, species, evolutions, flavorText, abilities }
 }
@@ -53,4 +51,12 @@ const getPokemonEvo = async ({ toEvolutions }) => {
     toEvolutions.map(async (evo) => await getPokemon({ keyword: evo }))
   )
   return evolutions
+}
+
+const getPokemon = async ({ keyword }) => {
+  const resp = await fetch(`${API_URL}pokemon/${keyword}`)
+  const apiResponse = await resp.json()
+  const { name, id, types } = apiResponse
+  const img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
+  return { id, name, img, types }
 }

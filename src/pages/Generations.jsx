@@ -4,10 +4,11 @@ import TypesPokemons from '../components/TypesPokemons'
 import PokemonContext from '../context/pokeContext'
 import { useGenerations } from '../hooks/useGenerations'
 import { useTypePokemons } from '../hooks/useTypePokemons'
+import Spinner from '../components/Spinner'
 
 export default function Generations ({ params }) {
   const { id } = params
-  const { pokemonsFilter } = useGenerations({ id })
+  const { pokemonsFilter, loading } = useGenerations({ id })
   const { typeSelect } = useContext(PokemonContext)
   const { typesFilter } = useTypePokemons({ type: typeSelect })
 
@@ -19,7 +20,7 @@ export default function Generations ({ params }) {
           {
             (typesFilter.length !== 0)
               ? <ListOfPokemons pokemons={typesFilter} />
-              : <ListOfPokemons pokemons={pokemonsFilter} />
+              : loading ? <Spinner /> : <ListOfPokemons pokemons={pokemonsFilter} />
           }
         </div>
       </div>

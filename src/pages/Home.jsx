@@ -26,16 +26,12 @@ export default function Home () {
   }, [debounceHandleNextPage, isNearScreen, setPokemonsFilter])
   return (
     <>
-      {
-        loading
-          ? <Spinner />
-          : (
-            <div className='App-Results'>
-              <ListOfPokemons pokemons={pokemonPage} />
-              <div id='visor' ref={externalRef} />
-            </div>
-            )
-      }
+      <div className='App-Results'>
+        <ListOfPokemons pokemons={pokemonPage} />
+        {loading ? <Spinner /> : null}
+        <div id='visor' ref={externalRef} />
+      </div>
+
     </>
   )
 }
