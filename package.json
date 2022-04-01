@@ -8,7 +8,6 @@
     "host": "vite --host"
   },
   "dependencies": {
-    "connect-history-api-fallback": "^1.6.0",
     "framer-motion": "6.2.3",
     "intersection-observer": "^0.12.0",
     "js-levenshtein": "^1.1.6",
@@ -20,7 +19,7 @@
   "devDependencies": {
     "@vitejs/plugin-react": "1.0.7",
     "standard": "16.0.4",
-    "vite": "2.7.2"
+    "vite": "^2.7.2"
   },
   "eslintConfig": {
     "extends": [
