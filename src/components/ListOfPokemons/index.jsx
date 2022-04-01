@@ -2,7 +2,7 @@ import React from 'react'
 import Pokemon from '../Pokemon'
 import './style.css'
 
-function ListOfPokemons ({ pokemons }) {
+export default function ListOfPokemons ({ pokemons }) {
   return (
     <div className='Pokemons'>
       {
@@ -20,5 +20,3 @@ function ListOfPokemons ({ pokemons }) {
     </div>
   )
 }
-
-export default React.memo(ListOfPokemons)

@@ -7,7 +7,7 @@ import Generations from '../Generations'
 
 export default function NavBar () {
   const [show, setShow] = useState(false)
-  const [, pushLocation] = useLocation()
+  const [path, pushLocation] = useLocation()
 
   const handlerSubmit = useCallback(({ keyword }) => {
     pushLocation(`/search/${keyword}`)
