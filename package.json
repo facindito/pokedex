@@ -8,6 +8,7 @@
     "host": "vite --host"
   },
   "dependencies": {
+    "connect-history-api-fallback": "^1.6.0",
     "framer-motion": "6.2.3",
     "intersection-observer": "^0.12.0",
     "js-levenshtein": "^1.1.6",
